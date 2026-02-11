@@ -1,5 +1,8 @@
 # DevContainer 設計ドキュメント / DevContainer Design Document
 
+> **注意 / Note**: このドキュメントでは Go 1.23 を例として使用していますが、実際の設定では `devcontainer.json` で指定されているバージョンを参照してください。  
+> **Note**: This document uses Go 1.23 as an example, but please refer to the version specified in `devcontainer.json` for the actual configuration.
+
 ## 日本語 / Japanese
 
 ### なぜ Dockerfile ではなく post-create script を使用するのか？
