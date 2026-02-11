@@ -12,6 +12,8 @@
 #
 # See README.md for detailed explanation.
 
+set -e  # Exit on error
+
 echo "Installing Go development tools..."
 
 # Display Go version
