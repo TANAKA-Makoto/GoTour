@@ -1,6 +1,6 @@
 {
 	"name": "Go Tour Development",
-	"image": "mcr.microsoft.com/devcontainers/go:1-1.23-bookworm",
+	"image": "mcr.microsoft.com/devcontainers/go:1-bookworm",
 
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
@@ -43,7 +43,7 @@
 		}
 	},
 
-	"postCreateCommand": ".devcontainer/post-create.sh",
+	"postCreateCommand": "bash .devcontainer/post-create.sh",
 
 	"remoteUser": "vscode"
 }
