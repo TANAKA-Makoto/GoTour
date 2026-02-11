@@ -61,7 +61,12 @@ chmod +x "$HOME/bin/gotour"
 # Add ~/bin to PATH if not already there
 if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
     echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.bashrc"
-    echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.zshrc"
+    # Only add to .zshrc if zsh is installed and file exists or zsh is the default shell
+    if command -v zsh &> /dev/null; then
+        echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.zshrc"
+    fi
+    # Export for current session
+    export PATH="$HOME/bin:$PATH"
 fi
 
 echo "✓ All Go development tools installed successfully!"
