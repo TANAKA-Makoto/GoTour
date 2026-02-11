@@ -27,7 +27,7 @@ Once the devcontainer is ready, you can start the Japanese Go Tour:
 gotour
 ```
 
-This will start a local web server and open your browser to the Japanese version of A Tour of Go. The tour runs locally on your machine, making it faster than the online version.
+This will start a local web server. Open your browser and navigate to http://localhost:3999 to access the Japanese version of A Tour of Go. The tour runs locally on your machine, making it faster than the online version.
 
 ### What's Included
 

@@ -52,7 +52,8 @@ cat > "$HOME/bin/gotour" << 'EOF'
 #!/bin/bash
 cd "$HOME/go-tour-jp"
 echo "Starting Japanese Go Tour..."
-echo "The tour will open in your browser at http://localhost:3999"
+echo "The tour server will start at http://localhost:3999"
+echo "Please open this URL in your browser to access the tour"
 echo "Press Ctrl+C to stop the server"
 go run .
 EOF
