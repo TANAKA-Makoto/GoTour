@@ -62,8 +62,8 @@ chmod +x "$HOME/bin/gotour"
 # Add ~/bin to PATH if not already there
 if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
     echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.bashrc"
-    # Only add to .zshrc if zsh is installed and file exists or zsh is the default shell
-    if command -v zsh &> /dev/null; then
+    # Only add to .zshrc if zsh is installed and the config file exists
+    if command -v zsh &> /dev/null && [ -f "$HOME/.zshrc" ]; then
         echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.zshrc"
     fi
     # Export for current session
