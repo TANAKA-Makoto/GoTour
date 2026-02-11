@@ -2,6 +2,15 @@
 
 # Post-create script for VS Code devcontainer
 # Installs Go development tools
+#
+# Why use post-create script instead of Dockerfile?
+# 1. Leverages official Microsoft devcontainer images (maintained and secure)
+# 2. Installs latest versions of tools automatically (@latest)
+# 3. Easier to maintain and modify than Dockerfile
+# 4. Tools installed in user space, keeping base image lightweight
+# 5. No need to rebuild container image when updating tools
+#
+# See README.md for detailed explanation.
 
 echo "Installing Go development tools..."
 

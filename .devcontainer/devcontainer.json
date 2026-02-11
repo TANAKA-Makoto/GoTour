@@ -1,5 +1,7 @@
 {
 	"name": "Go Tour Development",
+	// Using official Microsoft Go devcontainer image
+	// See .devcontainer/README.md for why we use post-create script instead of custom Dockerfile
 	"image": "mcr.microsoft.com/devcontainers/go:1-1.23-bookworm",
 
 	"features": {
