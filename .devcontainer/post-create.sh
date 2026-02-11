@@ -35,9 +35,34 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 echo "Installing golangci-lint..."
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
-# Install Japanese Go Tour
-echo "Installing Japanese Go Tour (go-tour-jp)..."
-go install github.com/atotto/go-tour-jp/gotour@latest
+# Clone Japanese Go Tour repository
+echo "Cloning Japanese Go Tour (go-tour-jp)..."
+TOUR_DIR="$HOME/go-tour-jp"
+if [ ! -d "$TOUR_DIR" ]; then
+    git clone https://github.com/atotto/go-tour-jp.git "$TOUR_DIR"
+    echo "✓ Japanese Go Tour cloned to $TOUR_DIR"
+else
+    echo "✓ Japanese Go Tour already exists at $TOUR_DIR"
+fi
+
+# Create a convenience script to run the tour
+echo "Creating gotour command..."
+mkdir -p "$HOME/bin"
+cat > "$HOME/bin/gotour" << 'EOF'
+#!/bin/bash
+cd "$HOME/go-tour-jp"
+echo "Starting Japanese Go Tour..."
+echo "The tour will open in your browser at http://localhost:3999"
+echo "Press Ctrl+C to stop the server"
+go run .
+EOF
+chmod +x "$HOME/bin/gotour"
+
+# Add ~/bin to PATH if not already there
+if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
+    echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.bashrc"
+    echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.zshrc"
+fi
 
 echo "✓ All Go development tools installed successfully!"
 echo ""
