@@ -1,0 +1,49 @@
+{
+	"name": "Go Tour Development",
+	"image": "mcr.microsoft.com/devcontainers/go:1-bookworm",
+
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"upgradePackages": true
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": true,
+			"version": "latest"
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"go.toolsManagement.checkForUpdates": "local",
+				"go.useLanguageServer": true,
+				"go.gopath": "/go",
+				"go.goroot": "/usr/local/go",
+				"editor.formatOnSave": true,
+				"[go]": {
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": "explicit"
+					}
+				},
+				"go.lintTool": "golangci-lint",
+				"go.lintOnSave": "package",
+				"gopls": {
+					"formatting.gofumpt": true
+				}
+			},
+			"extensions": [
+				"golang.go",
+				"eamodio.gitlens",
+				"davidanson.vscode-markdownlint",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+
+	"postCreateCommand": "bash .devcontainer/post-create.sh",
+
+	"remoteUser": "vscode"
+}
