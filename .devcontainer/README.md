@@ -98,6 +98,8 @@ Consider using a custom Dockerfile when:
     - `delve` (debugger)
     - `staticcheck` (static analyzer)
     - `golangci-lint` (linter)
+  - Installs Japanese Go Tour:
+    - `gotour` (go-tour-jp) - Japanese version of A Tour of Go
 
 ### Benefits of This Architecture
 

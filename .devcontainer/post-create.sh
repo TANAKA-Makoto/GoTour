@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Post-create script for VS Code devcontainer
-# Installs Go development tools
+# Installs Go development tools and Japanese Go Tour
 #
 # Why use post-create script instead of Dockerfile?
 # 1. Leverages official Microsoft devcontainer images (maintained and secure)
@@ -35,4 +35,10 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 echo "Installing golangci-lint..."
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
+# Install Japanese Go Tour
+echo "Installing Japanese Go Tour (go-tour-jp)..."
+go install github.com/atotto/go-tour-jp/gotour@latest
+
 echo "✓ All Go development tools installed successfully!"
+echo ""
+echo "To start the Japanese Go Tour, run: gotour"
