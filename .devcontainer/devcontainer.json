@@ -43,7 +43,7 @@
 		}
 	},
 
-	"postCreateCommand": "go version && go install golang.org/x/tools/gopls@latest && go install github.com/go-delve/delve/cmd/dlv@latest && go install honnef.co/go/tools/cmd/staticcheck@latest && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest",
+	"postCreateCommand": ".devcontainer/post-create.sh",
 
 	"remoteUser": "vscode"
 }
